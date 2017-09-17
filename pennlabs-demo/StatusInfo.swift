@@ -11,10 +11,10 @@ import Alamofire
 import SwiftyJSON
 
 class StatusInfo{
+    
     static let instance = StatusInfo()
     
     private var today:String = "2017-12-21"
-    
     private var statusToday:[Int:[String]] = [
         593:["CLOSED"],
         636:["CLOSED"],
@@ -40,7 +40,7 @@ class StatusInfo{
         }
     }
     
-    
+    // update a venue status from a venue json
     func updateStatusForVenue(venue:JSON){
         print("########:")
         let id = venue["id"].int
@@ -50,7 +50,10 @@ class StatusInfo{
                     if let meals = time["meal"].array{
                         var slots:[String] = []
                         for meal in meals{
-                            let slot = self.parseTime(time1: meal["open"].stringValue, time2: meal["close"].stringValue)
+                            let slot = self.parseTime(
+                                time1: meal["open"].stringValue,
+                                time2: meal["close"].stringValue
+                            )
                             print(slot)
                             slots.append(slot)
                         }
@@ -61,8 +64,8 @@ class StatusInfo{
         }
     }
     
-    
-    func parseTime(time1:String, time2:String) -> String{
+    // parse time to designated format
+    private func parseTime(time1:String, time2:String) -> String{
         var a = time1
         if time1.characters.first == "0"{
             let index = time1.index(time1.startIndex, offsetBy:1)
@@ -88,6 +91,7 @@ class StatusInfo{
         return output
     }
     
+    // get today's date to compare info
     func getTodayDate(){
         let date = Date()
         let formatter = DateFormatter()
@@ -97,6 +101,7 @@ class StatusInfo{
         today = result
     }
     
+    // Get Status String for Venue, called when draw cell
     func getStatus(venue:Venue) -> String{
         let id = venue.id
         let status = statusToday[id]!
@@ -111,7 +116,5 @@ class StatusInfo{
         }
 
     }
-    
-    
     
 }

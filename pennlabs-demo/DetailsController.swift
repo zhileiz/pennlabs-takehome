@@ -16,10 +16,8 @@ class DetailsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let request = URLRequest(url: url!)
         webView.loadRequest(request)
-
     }
 
 }

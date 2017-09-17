@@ -18,21 +18,21 @@ class CustomViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
+    // set up autolayout for cell contents
     func setUpView(venue:Venue){
         setUpContent(venue: venue)
         venueImg.snp.makeConstraints{(make) -> Void in
             make.height.equalTo(120)
             make.centerY.equalTo(self.contentView)
-            make.width.equalTo(200)
+            make.width.equalTo(self.contentView).dividedBy(2)
             make.left.equalTo(self.contentView)
         }
         nameLabel.snp.makeConstraints{(make) -> Void in
             make.height.equalTo(40)
             make.top.equalTo(self.contentView).offset(35)
-            make.width.equalTo(200)
+            make.width.equalTo(self.contentView).dividedBy(2.1)
             make.right.equalTo(self.contentView)
         }
         nameLabel.font = UIFont(name: "HelveticaNeue", size: 20)
@@ -40,19 +40,21 @@ class CustomViewCell: UITableViewCell {
         statusLabel.snp.makeConstraints{(make) -> Void in
             make.height.equalTo(40)
             make.bottom.equalTo(self.contentView).offset(-5)
-            make.width.equalTo(200)
+            make.width.equalTo(self.contentView).dividedBy(2.1)
             make.right.equalTo(self.contentView)
         }
         statusLabel.font = UIFont(name: "HelveticaNeue-Light", size: 14)
         setUpBackground()
     }
     
+    // set up content for cell
     private func setUpContent(venue:Venue){
         nameLabel.text = venue.name
         statusLabel.text = StatusInfo.instance.getStatus(venue: venue)
         venueImg.image = UIImage(named: venue.imageName)
     }
     
+    // set up background color and shadow for cell
     private func setUpBackground(){
         self.backgroundColor = UIColor(hex: "F7F7F7")
         self.layer.shadowPath = UIBezierPath(rect:self.bounds).cgPath
@@ -62,7 +64,5 @@ class CustomViewCell: UITableViewCell {
         self.layer.shadowColor = UIColor.black.cgColor
         self.clipsToBounds = false
     }
-    
-
 
 }

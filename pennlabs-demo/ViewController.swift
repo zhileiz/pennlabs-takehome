@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         tableView.separatorColor = UIColor.clear
     }
     
+    // give URL when going to web view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = tableView.indexPathForSelectedRow{
             let detailVC = segue.destination as! DetailsController
@@ -39,10 +40,30 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    // Get JSON from API
+    func updateStatus(){
+        StatusInfo.instance.resetStatus()
+        StatusInfo.instance.getTodayDate()
+        Alamofire.request("http://api.pennlabs.org/dining/venues").responseJSON { response in
+            if let data = response.result.value {
+                let json = JSON(data)
+                if let venues = json["document"]["venue"].array{
+                    for venue in venues{
+                        StatusInfo.instance.updateStatusForVenue(venue: venue)
+                    }
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
 
 }
 
+
+// Table View Code
 extension ViewController:UITableViewDelegate, UITableViewDataSource{
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -95,23 +116,5 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource{
             return UITableViewCell()
         }
     }
+    
 }
-
-extension ViewController{
-    func updateStatus(){
-        StatusInfo.instance.resetStatus()
-        StatusInfo.instance.getTodayDate()
-        Alamofire.request("http://api.pennlabs.org/dining/venues").responseJSON { response in
-            if let data = response.result.value {
-                let json = JSON(data)
-                if let venues = json["document"]["venue"].array{
-                    for venue in venues{
-                        StatusInfo.instance.updateStatusForVenue(venue: venue)
-                    }
-                    self.tableView.reloadData()
-                }
-            }
-        }
-    }
-}
-
