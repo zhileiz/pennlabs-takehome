@@ -28,6 +28,17 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.separatorColor = UIColor.clear
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = tableView.indexPathForSelectedRow{
+            let detailVC = segue.destination as! DetailsController
+            if indexPath.section == 0{
+                detailVC.url = URL(string: residentialVenues[indexPath.row].facilityURL)
+            } else {
+                detailVC.url = URL(string: retailVenues[indexPath.row].facilityURL)
+            }
+        }
+    }
 
 }
 
