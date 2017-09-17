@@ -43,20 +43,18 @@ class StatusInfo{
     
     func updateStatusForVenue(venue:JSON){
         print("########:")
-        let id = venue["id"].int ?? 0
-        if id != 0 {
-            if let times = venue["dateHours"].array{
-                for time in times{
-                    if time["date"].stringValue == self.today{
-                        if let meals = time["meal"].array{
-                            var slots:[String] = []
-                            for meal in meals{
-                                let slot = self.parseTime(time1: meal["open"].stringValue, time2: meal["close"].stringValue)
-                                print(slot)
-                                slots.append(slot)
-                            }
-                            self.statusToday[id] = slots
+        let id = venue["id"].int
+        if let times = venue["dateHours"].array{
+            for time in times{
+                if time["date"].stringValue == self.today{
+                    if let meals = time["meal"].array{
+                        var slots:[String] = []
+                        for meal in meals{
+                            let slot = self.parseTime(time1: meal["open"].stringValue, time2: meal["close"].stringValue)
+                            print(slot)
+                            slots.append(slot)
                         }
+                        self.statusToday[id!] = slots
                     }
                 }
             }
@@ -65,8 +63,18 @@ class StatusInfo{
     
     
     func parseTime(time1:String, time2:String) -> String{
-        let arr1 = time1.components(separatedBy: ":")
-        let arr2 = time2.components(separatedBy: ":")
+        var a = time1
+        if time1.characters.first == "0"{
+            let index = time1.index(time1.startIndex, offsetBy:1)
+            a = time1.substring(from: index)
+        }
+        var b = time2
+        if time2.characters.first == "0"{
+            let index = time2.index(time1.startIndex, offsetBy:1)
+            b = time2.substring(from: index)
+        }
+        let arr1 = a.components(separatedBy: ":")
+        let arr2 = b.components(separatedBy: ":")
         var output = ""
         if arr1[1] == "00" && arr2[1] == "00"{
             output = "\(arr1[0]) - \(arr2[0])"

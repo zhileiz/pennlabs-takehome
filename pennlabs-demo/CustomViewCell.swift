@@ -36,19 +36,31 @@ class CustomViewCell: UITableViewCell {
             make.right.equalTo(self.contentView)
         }
         nameLabel.font = UIFont(name: "HelveticaNeue", size: 20)
+        nameLabel.textColor = UIColor(hex: "868686")
         statusLabel.snp.makeConstraints{(make) -> Void in
             make.height.equalTo(40)
             make.bottom.equalTo(self.contentView).offset(-5)
             make.width.equalTo(200)
             make.right.equalTo(self.contentView)
         }
-        self.backgroundColor = UIColor(hex: "F7F7F7")
+        statusLabel.font = UIFont(name: "HelveticaNeue-Light", size: 14)
+        setUpBackground()
     }
     
     private func setUpContent(venue:Venue){
         nameLabel.text = venue.name
         statusLabel.text = StatusInfo.instance.getStatus(venue: venue)
         venueImg.image = UIImage(named: venue.imageName)
+    }
+    
+    private func setUpBackground(){
+        self.backgroundColor = UIColor(hex: "F7F7F7")
+        self.layer.shadowPath = UIBezierPath(rect:self.bounds).cgPath
+        self.layer.shadowOpacity = 0.3
+        self.layer.shadowRadius = 8
+        self.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.clipsToBounds = false
     }
     
 
