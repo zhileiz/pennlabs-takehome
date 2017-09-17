@@ -49,7 +49,7 @@ class StatusInfo{
                     if let meals = time["meal"].array{
                         var slots:[String] = []
                         for meal in meals{
-                            let slot = self.parseTime(
+                            let slot = self.parseTime2(
                                 time1: meal["open"].stringValue,
                                 time2: meal["close"].stringValue
                             )
@@ -87,6 +87,29 @@ class StatusInfo{
             output = "\(arr1[0]) - \(arr2[0]):\(arr2[1])"
         }
         return output
+    }
+    
+    private func parseTime2(time1:String, time2:String) -> String{
+        let left = parseSingleTime(time: time1)
+        let right = parseSingleTime(time: time2)
+        return "\(left) - \(right)"
+    }
+    
+    private func parseSingleTime(time:String) -> String{
+        let times = time.components(separatedBy: ":")
+        let hour = Int(times[0])!
+        let minute = Int(times[1])!
+        let isAM = (hour % 12 == hour)
+        let isFull = (minute == 0)
+        if isAM && isFull{
+            return "\(hour)A"
+        } else if !isAM && !isFull {
+            return "\(hour % 12):\(times[1])P"
+        } else if isFull{
+            return "\(hour % 12)P"
+        } else {
+            return "\(hour):\(times[1])A"
+        }
     }
     
     // get today's date to compare info
