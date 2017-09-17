@@ -7,15 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF2B2E161F6E7792000176BD /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2B2E151F6E7792000176BD /* CustomViewCell.swift */; };
+		CF2B2E181F6E77D5000176BD /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2B2E171F6E77D5000176BD /* DetailsController.swift */; };
+		CF2B2E1A1F6EAA32000176BD /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2B2E191F6EAA32000176BD /* Venue.swift */; };
+		CF2B2E1C1F6EAB7D000176BD /* VenuesInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2B2E1B1F6EAB7D000176BD /* VenuesInfo.swift */; };
+		CF2B2E1E1F6EABBD000176BD /* StatusInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2B2E1D1F6EABBD000176BD /* StatusInfo.swift */; };
 		CF7668C51F6E7653008CCEB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7668C41F6E7653008CCEB2 /* AppDelegate.swift */; };
 		CF7668C71F6E7653008CCEB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7668C61F6E7653008CCEB2 /* ViewController.swift */; };
 		CF7668CA1F6E7653008CCEB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF7668C81F6E7653008CCEB2 /* Main.storyboard */; };
 		CF7668CD1F6E7653008CCEB2 /* pennlabs_demo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF7668CB1F6E7653008CCEB2 /* pennlabs_demo.xcdatamodeld */; };
 		CF7668CF1F6E7653008CCEB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF7668CE1F6E7653008CCEB2 /* Assets.xcassets */; };
 		CF7668D21F6E7653008CCEB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF7668D01F6E7653008CCEB2 /* LaunchScreen.storyboard */; };
+		E10E68F1FA2FCE0D5653E834 /* Pods_pennlabs_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285C8C64110EC898AC4CF28F /* Pods_pennlabs_demo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		285C8C64110EC898AC4CF28F /* Pods_pennlabs_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pennlabs_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43A9675FB1B6B1F6E25264E5 /* Pods-pennlabs-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pennlabs-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-pennlabs-demo/Pods-pennlabs-demo.release.xcconfig"; sourceTree = "<group>"; };
+		627F454D7789015FE9DE2CD9 /* Pods-pennlabs-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pennlabs-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pennlabs-demo/Pods-pennlabs-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		CF2B2E151F6E7792000176BD /* CustomViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
+		CF2B2E171F6E77D5000176BD /* DetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
+		CF2B2E191F6EAA32000176BD /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		CF2B2E1B1F6EAB7D000176BD /* VenuesInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesInfo.swift; sourceTree = "<group>"; };
+		CF2B2E1D1F6EABBD000176BD /* StatusInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusInfo.swift; sourceTree = "<group>"; };
 		CF7668C11F6E7653008CCEB2 /* pennlabs-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pennlabs-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7668C41F6E7653008CCEB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF7668C61F6E7653008CCEB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,17 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E10E68F1FA2FCE0D5653E834 /* Pods_pennlabs_demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50FD9EC6951F85CC740312AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				285C8C64110EC898AC4CF28F /* Pods_pennlabs_demo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		890527B9A3C72EAD77F46CB4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				627F454D7789015FE9DE2CD9 /* Pods-pennlabs-demo.debug.xcconfig */,
+				43A9675FB1B6B1F6E25264E5 /* Pods-pennlabs-demo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CF7668B81F6E7653008CCEB2 = {
 			isa = PBXGroup;
 			children = (
 				CF7668C31F6E7653008CCEB2 /* pennlabs-demo */,
 				CF7668C21F6E7653008CCEB2 /* Products */,
+				890527B9A3C72EAD77F46CB4 /* Pods */,
+				50FD9EC6951F85CC740312AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,8 +90,11 @@
 		CF7668C31F6E7653008CCEB2 /* pennlabs-demo */ = {
 			isa = PBXGroup;
 			children = (
+				CF7668DC1F6E7736008CCEB2 /* Services */,
+				CF7668DB1F6E772E008CCEB2 /* Controllers */,
+				CF7668DA1F6E7720008CCEB2 /* Views */,
+				CF7668D91F6E7703008CCEB2 /* Models */,
 				CF7668C41F6E7653008CCEB2 /* AppDelegate.swift */,
-				CF7668C61F6E7653008CCEB2 /* ViewController.swift */,
 				CF7668C81F6E7653008CCEB2 /* Main.storyboard */,
 				CF7668CE1F6E7653008CCEB2 /* Assets.xcassets */,
 				CF7668D01F6E7653008CCEB2 /* LaunchScreen.storyboard */,
@@ -67,6 +104,40 @@
 			path = "pennlabs-demo";
 			sourceTree = "<group>";
 		};
+		CF7668D91F6E7703008CCEB2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CF2B2E191F6EAA32000176BD /* Venue.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CF7668DA1F6E7720008CCEB2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CF2B2E151F6E7792000176BD /* CustomViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		CF7668DB1F6E772E008CCEB2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF7668C61F6E7653008CCEB2 /* ViewController.swift */,
+				CF2B2E171F6E77D5000176BD /* DetailsController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		CF7668DC1F6E7736008CCEB2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CF2B2E1B1F6EAB7D000176BD /* VenuesInfo.swift */,
+				CF2B2E1D1F6EABBD000176BD /* StatusInfo.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +145,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF7668D61F6E7653008CCEB2 /* Build configuration list for PBXNativeTarget "pennlabs-demo" */;
 			buildPhases = (
+				2EB5899AE30A8DFB245156B8 /* [CP] Check Pods Manifest.lock */,
 				CF7668BD1F6E7653008CCEB2 /* Sources */,
 				CF7668BE1F6E7653008CCEB2 /* Frameworks */,
 				CF7668BF1F6E7653008CCEB2 /* Resources */,
+				2CB0394B06E45439D1970CF2 /* [CP] Embed Pods Frameworks */,
+				EAC057322DD362612447D3E9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,12 +209,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2CB0394B06E45439D1970CF2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-pennlabs-demo/Pods-pennlabs-demo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pennlabs-demo/Pods-pennlabs-demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EB5899AE30A8DFB245156B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-pennlabs-demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAC057322DD362612447D3E9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pennlabs-demo/Pods-pennlabs-demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CF7668BD1F6E7653008CCEB2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CF7668C71F6E7653008CCEB2 /* ViewController.swift in Sources */,
+				CF2B2E1C1F6EAB7D000176BD /* VenuesInfo.swift in Sources */,
+				CF2B2E1A1F6EAA32000176BD /* Venue.swift in Sources */,
+				CF2B2E1E1F6EABBD000176BD /* StatusInfo.swift in Sources */,
+				CF2B2E161F6E7792000176BD /* CustomViewCell.swift in Sources */,
+				CF2B2E181F6E77D5000176BD /* DetailsController.swift in Sources */,
 				CF7668C51F6E7653008CCEB2 /* AppDelegate.swift in Sources */,
 				CF7668CD1F6E7653008CCEB2 /* pennlabs_demo.xcdatamodeld in Sources */,
 			);
@@ -263,6 +402,7 @@
 		};
 		CF7668D71F6E7653008CCEB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 627F454D7789015FE9DE2CD9 /* Pods-pennlabs-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PL4U52EEV4;
@@ -276,6 +416,7 @@
 		};
 		CF7668D81F6E7653008CCEB2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43A9675FB1B6B1F6E25264E5 /* Pods-pennlabs-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PL4U52EEV4;
@@ -306,6 +447,7 @@
 				CF7668D81F6E7653008CCEB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
