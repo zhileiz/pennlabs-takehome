@@ -42,7 +42,6 @@ class StatusInfo{
     
     // update a venue status from a venue json
     func updateStatusForVenue(venue:JSON){
-        print("########:")
         let id = venue["id"].int
         if let times = venue["dateHours"].array{
             for time in times{
@@ -54,7 +53,6 @@ class StatusInfo{
                                 time1: meal["open"].stringValue,
                                 time2: meal["close"].stringValue
                             )
-                            print(slot)
                             slots.append(slot)
                         }
                         self.statusToday[id!] = slots
@@ -97,7 +95,6 @@ class StatusInfo{
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         let result = formatter.string(from: date)
-        print(result)
         today = result
     }
     

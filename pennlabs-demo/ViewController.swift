@@ -112,7 +112,7 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource{
             }
             return cell
         } else {
-            print("Cannot Draw Custom Cell")
+            print("!! Could Not Draw Custom Cell !!")
             return UITableViewCell()
         }
     }

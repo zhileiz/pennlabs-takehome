@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "pennlabs-demo/StatusInfo.swift"
-            timestampString = "527363261.626217"
+            timestampString = "527365942.347972"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "parseTime(time1:time2:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>NVActivityIndicatorView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-pennlabs-demo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,12 +37,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3E9640CECD110B03EEEDCB8882E5B0E9</key>
+		<key>240FBE01CB87C5918E318771F33974D8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>40B47332B61FEC18C18B570AA1F15559</key>
+		<key>3EDFE4052B5DE7D509935AC0774CB135</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F5F7DB8EBAC12C2A8AB758B98617AD27</key>
+		<key>C52F9F66EA24C7D431AE94832A5A07B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CE253C2489033915B88433A73D472FC1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

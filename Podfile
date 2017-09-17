@@ -10,4 +10,5 @@ target 'pennlabs-demo' do
    pod 'SnapKit', '~> 3.2.0'
    pod 'SwiftyJSON'
    pod 'Hue'
+   pod ‘NVActivityIndicatorView’
 end
